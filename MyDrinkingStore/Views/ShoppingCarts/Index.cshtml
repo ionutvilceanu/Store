@@ -1,0 +1,80 @@
+﻿@model IEnumerable<MyDrinkingStore.Models.ShoppingCart>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ShoppingCartId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ShoppingCartId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ShoppingCartId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@
+<div class="row checkoutForm">
+    <h2>Your shopping cart</h2>
+    <h4>Here are the drinks in your shopping cart.</h4>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Selected amount</th>
+                <th>Drink</th>
+                <th class="text-right">Price</th>
+                <th class="text-right">Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @*@foreach (var line in Model.ShoppingCart.ShoppingCartItems)
+            {
+                <tr>
+                    <td class="text-center">@line.Amount</td>
+                    <td class="text-left">@line.Product.ProductName</td>
+                    <td class="text-right">@line.Product.Price.ToString("c")</td>
+                    <td class="text-right">
+                        @((line.Amount * line.Product.Price).ToString("c"))
+                    </td>
+                    <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" asp-controller="ShoppingCart" asp-action="Delete" asp-route-drinkId="@line.Product.ProductId"></a></td>
+                </tr>
+            }*@
+        </tbody>
+        <tfoot>
+            @*<tr>
+                <td colspan="3" class="text-right">Total:</td>
+                <td class="text-right">
+                    @Model.ShoppingCartTotal.ToString("c")
+                </td>
+            </tr>*@
+        </tfoot>
+    </table>
+    <div class="text-right">
+        <div class="btn-group ">
+            <a class="btn btn-success" asp-controller="Order" asp-action="Create">Check out</a>
+            <a class="btn-group">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    Add more drinks<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a asp-controller="Product" asp-action="List" >Alcoholic</a></li>
+                    
+                </ul>
+            </a>
+        </div>
+    </div>
+</div>
