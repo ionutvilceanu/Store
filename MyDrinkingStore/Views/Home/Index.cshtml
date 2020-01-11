@@ -2,7 +2,27 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+<h2>Bauturi alcoolice</h2>
+
+@model IEnumerable<MyDrinkingStore.Models.Category>
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <div class="card">
+                <img src="@Html.DisplayFor(modelItem => item.CategoryAvatar)" alt="Avatar" style="width:inherit; height:240px;">
+                <div class="container">
+                    <a asp-controller="Products" asp-action="Index" asp-route-categoryid="@item.CategoryId">@Html.DisplayFor(modelItem => item.CategoryName)</a>
+
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@*<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -11,18 +31,18 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img src="~/images/img3.jpg"  alt="ASP.NET" class="img-responsive" />
+            <img src="~/images/img3.jpg" alt="ASP.NET" class="img-responsive" />
             <div class="carousel-caption" role="option">
-                
+
             </div>
         </div>
         <div class="item">
             <img src="~/images/img3.jpg" alt="Visual Studio" class="img-responsive" />
             <div class="carousel-caption" role="option">
                 <p>
-                    
+
                     <a class="btn btn-default" href="https://localhost:44322/Products?categoryid=1">
-                       Vinuri premiate 
+                        Vinuri premiate
                     </a>
                 </p>
 
@@ -59,7 +79,7 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-</div>
+</div>*@
 
 
 

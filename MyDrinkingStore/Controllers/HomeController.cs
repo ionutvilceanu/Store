@@ -4,16 +4,25 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MyDrinkingStore.Data;
 using MyDrinkingStore.Models;
 
 namespace MyDrinkingStore.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly ApplicationDbContext _context;
+
+        public HomeController(ApplicationDbContext context)
         {
-            return View();
+            _context = context;
         }
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Categories.ToListAsync());
+        }
+
 
         public IActionResult About()
         {
