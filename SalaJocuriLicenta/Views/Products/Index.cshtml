@@ -1,0 +1,118 @@
+﻿@model IEnumerable<SalaJocuriLicenta.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Alege jocul preferat: </h2>
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+
+
+
+@if (SignInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
+{
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+<form action="/Products">
+    <span>
+
+        <input type="text" name="Search">
+    </span>
+
+    <button class="btn btn-success" type="submit">Search</button>
+
+</form>
+
+
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <div class="card">
+                <img src="@Html.DisplayFor(modelItem => item.AvatarProduct)" alt="Avatar" style="width:inherit; height:240px;">
+                <div class="container">
+                    <h4><b> <a asp-action="Details" asp-route-id="@item.ProductId">@Html.DisplayFor(modelItem => item.ProductName)</a> </b></h4>
+                    <p>@Html.DisplayFor(modelItem => item.ProductPrice) lei</p>
+                    <a asp-controller="Orders" asp-action="Create" asp-route-productid="@item.ProductId" class="btn btn-success">Rezerva acum</a>
+                    <p>@Html.DisplayFor(modelItem => item.Category.CategoryId)</p>
+                    <a asp-controller="Favorits" asp-action="Create" asp-route-productid="@item.ProductId" class="btn btn-success"> Add to Favorites</a>
+                    
+                </div>
+            </div>
+        </div>
+
+
+
+
+    }
+</div>
+
+
+
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.stellar.min.js"></script>
+<script src="/js/jquery.countdown.min.js"></script>
+<script src="/js/bootstrap-datepicker.min.js"></script>
+<script src="/js/jquery.easing.1.3.js"></script>
+<script src="/js/aos.js"></script>
+<script src="/js/jquery.fancybox.min.js"></script>
+<script src="/js/jquery.sticky.js"></script>
+<script src="/js/jquery.mb.YTPlayer.min.js"></script>
+
+
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductPrice)
+        </td>
+        <td>
+           @Html.DisplayFor(modelItem => item.AvatarProduct)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.CategoryId)
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+        </td>
+    </tr>*@
+

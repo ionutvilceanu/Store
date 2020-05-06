@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace SalaJocuriLicenta.Models
+{
+    public class Category
+    {
+        
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
+        public string CategoryAvatar { get; set; }
+
+
+        public virtual ICollection<Product> Products { get; set; }
+    }
+}

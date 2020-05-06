@@ -1,0 +1,73 @@
+﻿@model IEnumerable<SalaJocuriLicenta.Models.Favorit>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Favorites</h2>
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <div class="card">
+                <img src="@Html.DisplayFor(modelItem => item.Product.AvatarProduct)" alt="Avatar" style="width:inherit; height:240px;">
+                <div class="container">
+                    <h4><b> <a asp-action="Details" asp-route-id="@item.Product.ProductId">@Html.DisplayFor(modelItem => item.Product.ProductName)</a> </b></h4>
+                    <p>@Html.DisplayFor(modelItem => item.Product.ProductPrice) lei</p>
+                    <a asp-controller="Orders" asp-action="Create" asp-route-productid="@item.Product.ProductId" class="btn btn-success">Buy now</a>
+                    <a asp-action="Delete" asp-route-id="@item.FavoritId" class="btn btn-success">Remove</a>
+
+                </div>
+            </div>
+        </div>
+     }
+        
+</div>
+
+
+
+    
+
+
+    
+
+        @*<table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Product)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Product.ProductName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Product.ProductPrice)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+            @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Product.ProductId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Product.ProductName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Product.ProductPrice)
+                        </td>*@
+        @*<td>
+                <a asp-action="Edit" asp-route-id="@item.FavoritId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FavoritId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FavoritId">Delete</a>
+            </td>*@
+        @*</tr>*@
+    
+    

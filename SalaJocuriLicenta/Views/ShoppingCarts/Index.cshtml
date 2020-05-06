@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SalaJocuriLicenta.Models.ShoppingCart>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Your Shopping Cart</h2>
+
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <div class="card">
+                <img src="@Html.DisplayFor(modelItem => item.Product.AvatarProduct)" alt="Avatar" style="width:inherit; height:240px;">
+                <div class="container">
+                    <h4><b> <a asp-action="Details" asp-route-id="@item.Product.ProductId">@Html.DisplayFor(modelItem => item.Product.ProductName)</a> </b></h4>
+                    <p>@Html.DisplayFor(modelItem => item.Product.ProductPrice) lei</p>
+                    <a asp-controller="Orders" asp-action="Create" asp-route-productid="@item.Product.ProductId" class="btn btn-success">Buy now</a>
+                    <a asp-action="Delete" asp-route-id="@item.ShoppingCartId" class="btn btn-success">Remove</a>
+
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+
+<hr />
+
+@{
+    float totalCost = 0;
+    @foreach (var item in Model)
+    {
+        totalCost += item.Product.ProductPrice;
+    }
+    <div align="right">
+        <h2>
+            Cost:  @totalCost lei
+            <a asp-controller="Orders" asp-action="Create" class="btn btn-success">Buy now</a>
+        </h2>
+    </div>
+
+
+}
