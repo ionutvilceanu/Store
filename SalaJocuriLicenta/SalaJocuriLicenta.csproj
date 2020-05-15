@@ -6,6 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200514154141_identitymore.cs" />
+    <Compile Remove="Migrations\20200514154141_identitymore.Designer.cs" />
+    <Compile Remove="Migrations\20200514154629_s.cs" />
+    <Compile Remove="Migrations\20200514154629_s.Designer.cs" />
+    <Compile Remove="Migrations\20200514154837_uss.cs" />
+    <Compile Remove="Migrations\20200514154837_uss.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\images\cart.png.jpg" />
     <Content Remove="wwwroot\images\cart.png.png" />
   </ItemGroup>

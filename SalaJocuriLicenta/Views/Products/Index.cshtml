@@ -7,7 +7,7 @@
 <h2>Alege jocul preferat: </h2>
 @using Microsoft.AspNetCore.Identity
 
-@inject SignInManager<IdentityUser> SignInManager
+@inject SignInManager<ApplicationUser> SignInManager
 
 
 
@@ -42,7 +42,8 @@
                     <a asp-controller="Orders" asp-action="Create" asp-route-productid="@item.ProductId" class="btn btn-success">Rezerva acum</a>
                     <p>@Html.DisplayFor(modelItem => item.Category.CategoryId)</p>
                     <a asp-controller="Favorits" asp-action="Create" asp-route-productid="@item.ProductId" class="btn btn-success"> Add to Favorites</a>
-                    
+                    @*<a asp-controller="ShoppingCarts" asp-action="Create" asp-route-productid="@item.ProductId" class="btn btn-success"> Add to Cart</a>*@
+
                 </div>
             </div>
         </div>

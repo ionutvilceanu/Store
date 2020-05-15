@@ -9,7 +9,7 @@ using SalaJocuriLicenta.Models;
 
 namespace SalaJocuriLicenta.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -35,5 +35,6 @@ namespace SalaJocuriLicenta.Data
         public object Cards { get; internal set; }
         
         public DbSet<SalaJocuriLicenta.Models.ShoppingCart> ShoppingCart { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
     }
 }

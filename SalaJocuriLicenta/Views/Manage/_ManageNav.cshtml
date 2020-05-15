@@ -1,5 +1,5 @@
 ﻿@using SalaJocuriLicenta.Views.Manage
-@inject SignInManager<IdenityUser> SignInManager
+@inject SignInManager<ApplicationUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }
