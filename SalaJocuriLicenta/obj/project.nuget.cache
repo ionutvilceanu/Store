@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zKtjLd3FW7K62H0S7P5xP8Dsq3oZhalyZOQTbH2SRm75BF18//fok2XdbF63F0pAZfD/QXjVcX6wmLy2uA2sbA==",
+  "dgSpecHash": "KxX2RcwA3qXDc2WUQQ2pfTQjZ99vcWBwlBMk2Rt2DkDGttDavYET8JKxM81fYrpPULLRF6Yyt+vDD/Hu3JdVcQ==",
   "success": true,
   "projectFilePath": "D:\\Proiecte\\SalaJocuriLicenta\\SalaJocuriLicenta\\SalaJocuriLicenta.csproj",
   "expectedPackageFiles": [
@@ -170,6 +170,7 @@
     "C:\\Users\\Ionut\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.rest.clientruntime\\2.3.8\\microsoft.rest.clientruntime.2.3.8.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.rest.clientruntime.azure\\3.3.7\\microsoft.rest.clientruntime.azure.3.3.7.nupkg.sha512",
+    "C:\\Users\\Ionut\\.nuget\\packages\\microsoft.typescript.msbuild\\3.9.2\\microsoft.typescript.msbuild.3.9.2.nupkg.sha512",
     "C:\\Users\\Ionut\\.nuget\\packages\\microsoft.visualstudio.web.browserlink\\2.0.3\\microsoft.visualstudio.web.browserlink.2.0.3.nupkg.sha512",
     "C:\\Users\\Ionut\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\2.0.4\\microsoft.visualstudio.web.codegeneration.2.0.4.nupkg.sha512",
     "C:\\Users\\Ionut\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.contracts\\2.0.4\\microsoft.visualstudio.web.codegeneration.contracts.2.0.4.nupkg.sha512",

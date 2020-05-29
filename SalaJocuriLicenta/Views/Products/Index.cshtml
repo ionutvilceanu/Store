@@ -33,20 +33,23 @@
 <div class="row">
     @foreach (var item in Model)
     {
-        <div class="col-md-3">
-            <div class="card">
-                <img src="@Html.DisplayFor(modelItem => item.AvatarProduct)" alt="Avatar" style="width:inherit; height:240px;">
-                <div class="container">
-                    <h4><b> <a asp-action="Details" asp-route-id="@item.ProductId">@Html.DisplayFor(modelItem => item.ProductName)</a> </b></h4>
-                    <p>@Html.DisplayFor(modelItem => item.ProductPrice) lei</p>
-                    <a asp-controller="Orders" asp-action="Create" asp-route-productid="@item.ProductId" class="btn btn-success">Rezerva acum</a>
-                    <p>@Html.DisplayFor(modelItem => item.Category.CategoryId)</p>
-                    <a asp-controller="Favorits" asp-action="Create" asp-route-productid="@item.ProductId" class="btn btn-success"> Add to Favorites</a>
-                    @*<a asp-controller="ShoppingCarts" asp-action="Create" asp-route-productid="@item.ProductId" class="btn btn-success"> Add to Cart</a>*@
+    <div class="col-md-3">
+        
+        <div class="card">
+            <img src="@Html.DisplayFor(modelItem => item.AvatarProduct)" alt="Avatar" style="width:inherit; height:240px;">
+            <div class="container">
+                <h4><b> <a asp-action="Details" asp-route-id="@item.ProductId">@Html.DisplayFor(modelItem => item.ProductName)</a> </b></h4>
+                <p>@Html.DisplayFor(modelItem => item.ProductPrice) lei </p>
+                <a asp-controller="Favorits" asp-action="Create" asp-route-productid="@item.ProductId" class="btn btn-success"> + Favorite</a>
+                @*<a asp-controller="Orders" asp-action="Create" asp-route-productid="@item.ProductId" class="btn btn-success">Rezerva acum</a>*@
+                <p>@Html.DisplayFor(modelItem => item.Category.CategoryId)</p>
 
-                </div>
+                <a asp-controller="ShoppingCarts" asp-action="Create" asp-route-productid="@item.ProductId" class="btn btn-success"> + Rezervare</a>
+
+
             </div>
         </div>
+    </div>
 
 
 
@@ -59,7 +62,7 @@
 
 
 
-<script src="/js/jquery-3.3.1.min.js"></script>
+@*<script src="/js/jquery-3.3.1.min.js"></script>
 <script src="/js/jquery-migrate-3.0.1.min.js"></script>
 <script src="/js/jquery-ui.js"></script>
 <script src="/js/popper.min.js"></script>
@@ -77,7 +80,7 @@
 
 
 
-<script src="/js/main.js"></script>
+<script src="/js/main.js"></script>*@
 
 
 

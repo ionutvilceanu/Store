@@ -211,6 +211,24 @@ namespace SalaJocuriLicenta.Migrations
                     b.ToTable("Card");
                 });
 
+            modelBuilder.Entity("SalaJocuriLicenta.Models.Cart", b =>
+                {
+                    b.Property<int>("CartId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ApplicationUserId");
+
+                    b.Property<int>("NoProducts");
+
+                    b.Property<float>("TotalPrice");
+
+                    b.HasKey("CartId");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.ToTable("Carts");
+                });
+
             modelBuilder.Entity("SalaJocuriLicenta.Models.Category", b =>
                 {
                     b.Property<int>("CategoryId")
@@ -278,6 +296,8 @@ namespace SalaJocuriLicenta.Migrations
 
                     b.Property<string>("ProductDescription");
 
+                    b.Property<int>("ProductHours");
+
                     b.Property<string>("ProductName");
 
                     b.Property<int>("ProductPrice");
@@ -287,6 +307,24 @@ namespace SalaJocuriLicenta.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("SalaJocuriLicenta.Models.ProductCart", b =>
+                {
+                    b.Property<int>("ProductCartId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CartId");
+
+                    b.Property<int?>("ProductId");
+
+                    b.HasKey("ProductCartId");
+
+                    b.HasIndex("CartId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductCarts");
                 });
 
             modelBuilder.Entity("SalaJocuriLicenta.Models.Review", b =>
@@ -303,12 +341,44 @@ namespace SalaJocuriLicenta.Migrations
                     b.ToTable("Reviews");
                 });
 
+            modelBuilder.Entity("SalaJocuriLicenta.Models.SCart", b =>
+                {
+                    b.Property<string>("SCartId")
+                        .ValueGeneratedOnAdd();
+
+                    b.HasKey("SCartId");
+
+                    b.ToTable("SCarts");
+                });
+
+            modelBuilder.Entity("SalaJocuriLicenta.Models.SCartItem", b =>
+                {
+                    b.Property<int>("SCartItemId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Amount");
+
+                    b.Property<int?>("ProductId");
+
+                    b.Property<string>("SCartId");
+
+                    b.HasKey("SCartItemId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("SCartId");
+
+                    b.ToTable("SCartItems");
+                });
+
             modelBuilder.Entity("SalaJocuriLicenta.Models.ShoppingCart", b =>
                 {
                     b.Property<int>("ShoppingCartId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("ProductId");
+
+                    b.Property<int>("TotalCost");
 
                     b.HasKey("ShoppingCartId");
 
@@ -362,6 +432,13 @@ namespace SalaJocuriLicenta.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("SalaJocuriLicenta.Models.Cart", b =>
+                {
+                    b.HasOne("SalaJocuriLicenta.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId");
+                });
+
             modelBuilder.Entity("SalaJocuriLicenta.Models.Favorit", b =>
                 {
                     b.HasOne("SalaJocuriLicenta.Models.ApplicationUser", "ApplicationUser")
@@ -388,6 +465,29 @@ namespace SalaJocuriLicenta.Migrations
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("SalaJocuriLicenta.Models.ProductCart", b =>
+                {
+                    b.HasOne("SalaJocuriLicenta.Models.Cart", "Cart")
+                        .WithMany("ProductCarts")
+                        .HasForeignKey("CartId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("SalaJocuriLicenta.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId");
+                });
+
+            modelBuilder.Entity("SalaJocuriLicenta.Models.SCartItem", b =>
+                {
+                    b.HasOne("SalaJocuriLicenta.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId");
+
+                    b.HasOne("SalaJocuriLicenta.Models.SCart", "SCart")
+                        .WithMany("SCartItems")
+                        .HasForeignKey("SCartId");
                 });
 
             modelBuilder.Entity("SalaJocuriLicenta.Models.ShoppingCart", b =>

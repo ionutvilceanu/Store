@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using SalaJocuriLicenta.Data;
 using SalaJocuriLicenta.Models;
 
+
 namespace SalaJocuriLicenta.Controllers
 {
     public class OrdersController : Controller

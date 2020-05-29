@@ -42,10 +42,10 @@ D:\Proiecte\SalaJocuriLicenta\SalaJocuriLicenta\bin\Debug\netcoreapp2.0\SalaJocu
 D:\Proiecte\SalaJocuriLicenta\SalaJocuriLicenta\bin\Debug\netcoreapp2.0\SalaJocuriLicenta.dll
 D:\Proiecte\SalaJocuriLicenta\SalaJocuriLicenta\bin\Debug\netcoreapp2.0\SalaJocuriLicenta.pdb
 D:\Proiecte\SalaJocuriLicenta\SalaJocuriLicenta\obj\Debug\netcoreapp2.0\SalaJocuriLicenta.csprojAssemblyReference.cache
-D:\Proiecte\SalaJocuriLicenta\SalaJocuriLicenta\obj\Debug\netcoreapp2.0\SalaJocuriLicenta.csproj.CoreCompileInputs.cache
-D:\Proiecte\SalaJocuriLicenta\SalaJocuriLicenta\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 D:\Proiecte\SalaJocuriLicenta\SalaJocuriLicenta\obj\Debug\netcoreapp2.0\SalaJocuriLicenta.AssemblyInfoInputs.cache
 D:\Proiecte\SalaJocuriLicenta\SalaJocuriLicenta\obj\Debug\netcoreapp2.0\SalaJocuriLicenta.AssemblyInfo.cs
 D:\Proiecte\SalaJocuriLicenta\SalaJocuriLicenta\obj\Debug\netcoreapp2.0\SalaJocuriLicenta.dll
 D:\Proiecte\SalaJocuriLicenta\SalaJocuriLicenta\obj\Debug\netcoreapp2.0\SalaJocuriLicenta.pdb
 D:\Proiecte\SalaJocuriLicenta\SalaJocuriLicenta\obj\Debug\netcoreapp2.0\SalaJocuriLicenta.genruntimeconfig.cache
+D:\Proiecte\SalaJocuriLicenta\SalaJocuriLicenta\obj\Debug\netcoreapp2.0\SalaJocuriLicenta.csproj.CoreCompileInputs.cache
+D:\Proiecte\SalaJocuriLicenta\SalaJocuriLicenta\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

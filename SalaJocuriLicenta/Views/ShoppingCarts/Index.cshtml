@@ -32,10 +32,11 @@
 <hr />
 
 @{
-    float totalCost = 0;
+    int totalCost = 0;
     @foreach (var item in Model)
     {
         totalCost += item.Product.ProductPrice;
+        item.TotalCost = totalCost;
     }
     <div align="right">
         <h2>
@@ -43,6 +44,6 @@
             <a asp-controller="Orders" asp-action="Create" class="btn btn-success">Buy now</a>
         </h2>
     </div>
-
+    
 
 }

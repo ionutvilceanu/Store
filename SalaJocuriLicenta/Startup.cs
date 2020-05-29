@@ -8,6 +8,9 @@ using SalaJocuriLicenta.Data;
 using SalaJocuriLicenta.Models;
 using SalaJocuriLicenta.Services;
 using Microsoft.AspNetCore.Mvc;
+using SalaJocuriLicenta.Repository;
+using Microsoft.AspNetCore.Http;
+using SalaJocuriLicenta.Models;
 
 namespace SalaJocuriLicenta
 {
@@ -34,6 +37,13 @@ namespace SalaJocuriLicenta
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+            services.AddTransient<IProductRepository, ProductRepository>();
+            
+
+            //!!!!!!!
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            
+            services.AddScoped(sp => SCart.GetCart(sp));
 
 
             services.AddAuthentication().AddFacebook(facebookOptions =>
@@ -54,7 +64,8 @@ namespace SalaJocuriLicenta
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-
+            services.AddMemoryCache(); // Adds a default in-memory implementation of IDistributedCache
+            services.AddSession();
             services.AddMvc();
 
         }
@@ -73,11 +84,13 @@ namespace SalaJocuriLicenta
                 app.UseExceptionHandler("/Home/Error");
             }
 
+           
             app.UseStaticFiles();
 
 
             app.UseAuthentication();
 
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

@@ -1,0 +1,52 @@
+﻿@model SCartViewModel
+@using SalaJocuriLicenta.ViewModels
+
+
+
+<div class="row checkoutForm">
+    <h2>Your shopping cart</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Selected amount</th>
+                <th>Product</th>
+                <th class="text-right">Price</th>
+                <th class="text-right">Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var line in Model.SCart.SCartItems)
+            {
+                <tr>
+                    <td class="text-center">@line.Amount</td>
+                    <td class="text-left">@line.Product.ProductName</td>
+                    <td class="text-right">@line.Product.ProductPrice.ToString("c")</td>
+                    <td class="text-right">
+                        @((line.Amount * line.Product.ProductPrice).ToString("c"))
+                    </td>
+                    <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" asp-controller="SCart" asp-action="RemoveFromShoppingCart" asp-route-drinkId="@line.Product.ProductId"></a></td>
+                    @*<td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" href="@Url.Action("RemoveFromShoppingCart", "SCarts", new { ProductId = line.Product.ProductID })" class="links">Remove</a>*@
+                </tr>
+
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">Total:</td>
+                <td class="text-right">
+                    @Model.SCartTotal.ToString("c")
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="text-right">
+        <div class="btn-group ">
+            @*<a class="btn btn-success" asp-controller="Orders" asp-action="Create">Check out</a>*@
+            <a class="btn btn-success" href="@Url.Action("create", "Orders", new { SCartId = Model.SCart.SCartId })">Check out</a>
+            @*<a class="btn btn-success" href="@Url.Action("ClearAll", "SCarts", new { SCartId = Model.SCart.SCartId })">Check out</a>*@
+        </div>
+    </div>
+</div>

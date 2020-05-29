@@ -36,5 +36,10 @@ namespace SalaJocuriLicenta.Data
         
         public DbSet<SalaJocuriLicenta.Models.ShoppingCart> ShoppingCart { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        
+        public DbSet<SCartItem> SCartItems { get; set; }
+        public DbSet<SCart> SCarts { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<ProductCart> ProductCarts { get; set; }
     }
 }

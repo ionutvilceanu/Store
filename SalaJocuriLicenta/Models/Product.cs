@@ -12,6 +12,7 @@ namespace SalaJocuriLicenta.Models
         public string ProductDescription { get; set; }
         public int ProductPrice { get; set; }
         public string AvatarProduct { get; set; }
+        public int ProductHours { get; set; }
 
 
         public int CategoryId { get; set; }
