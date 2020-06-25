@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>aspnet-SalaJocuriLicenta-ABC66EA2-6A26-46A8-8BB2-B3E85E8D4508</UserSecretsId>
+    <AssemblyName>Store</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200514154141_identitymore.cs" />
+    <Compile Remove="Migrations\20200514154141_identitymore.Designer.cs" />
+    <Compile Remove="Migrations\20200514154629_s.cs" />
+    <Compile Remove="Migrations\20200514154629_s.Designer.cs" />
+    <Compile Remove="Migrations\20200514154837_uss.cs" />
+    <Compile Remove="Migrations\20200514154837_uss.Designer.cs" />
+    <Compile Remove="Migrations\20200526210013_dasasa.cs" />
+    <Compile Remove="Migrations\20200526210013_dasasa.Designer.cs" />
+    <Compile Remove="Migrations\20200526212736_newwws.cs" />
+    <Compile Remove="Migrations\20200526212736_newwws.Designer.cs" />
+    <Compile Remove="Migrations\20200527183212_iarisiar.cs" />
+    <Compile Remove="Migrations\20200527183212_iarisiar.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\images\cart.png.jpg" />
+    <Content Remove="wwwroot\images\cart.png.png" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.3" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="3.9.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.3" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.2" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+</Project>
